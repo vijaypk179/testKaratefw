@@ -29,7 +29,7 @@ class UsersRunner {
         List<String> jsonPaths = new ArrayList<>(jsonFiles.size());
         jsonFiles.forEach(file -> jsonPaths.add(file.getAbsolutePath()));
         Configuration config = new Configuration(new File("target"),
-                "com.rkdevblog.karate.employee");
+                "com.examples");
         ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
         reportBuilder.generateReports();
     }
@@ -39,6 +39,7 @@ class UsersRunner {
         Results results = Runner.path("classpath:examples")
                 .outputCucumberJson(true)
                 .parallel(5);;
+                System.out.println("Path report-->"+results.getReportDir());
         generateReport(results.getReportDir());
         //assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
     }
