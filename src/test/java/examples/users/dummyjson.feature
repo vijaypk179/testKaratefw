@@ -9,7 +9,6 @@ Feature: Verify dummy rest api endpoints
     When method get
     Then status 200
     * print response
-    #* karate.embed(response, "json")
 
   Scenario: verify product endpoints and check the response
     Given path '/products'

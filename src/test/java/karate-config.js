@@ -6,7 +6,8 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    myVarName: 'someValue',
+    apiURL: 'https://dummyjson.com/'
   }
   if (env == 'dev') {
     // customize
