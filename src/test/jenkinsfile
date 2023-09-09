@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+
+tools
+{
+maven 'Maven 3.8.6'
+}
+  stages {
+    stage("Test") {
+      steps {
+        sh 'mvn clean test "-Dkarate.options=--tags @regression" -Dtest=UsersRunner'
+      }
+    }
+
+  }
+}
