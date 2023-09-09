@@ -3,12 +3,12 @@ pipeline {
 
 tools
 {
-maven 'Maven 3.8.6'
+maven "Maven 3.8.6"
 }
   stages {
-    stage("Test") {
+    stage('Test') {
       steps {
-        sh 'mvn clean test "-Dkarate.options=--tags @regression" -Dtest=UsersRunner'
+        sh "mvn clean test"
       }
     }
 
